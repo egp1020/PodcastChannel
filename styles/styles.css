@@ -1,0 +1,868 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+html {scroll-behavior: smooth;}
+img {width: 100%;}
+
+/* ----------------- SECCIÓN: MENÚ DE NAVEGACIÓN------------------------ */
+nav {
+    width: 100%;
+    top: 0;
+    position: fixed;
+    background: #ffffff;
+    z-index: 99;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);
+}
+
+nav .nav-bar {
+    width: 90%;
+    margin: 10px auto;
+    height: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .nav-bar img {
+    width: 24px;
+    height: 24px;
+}
+
+nav .nav-bar label span {
+    display: block;
+    margin-top: 2px;
+    width: 18px;
+    height: 2px;
+    margin-bottom: 5px;
+    background: #000000;
+    transition: transform 0.2s ease-in-out;
+}
+
+nav input {
+    visibility: hidden;
+    position: absolute;
+}
+
+                             /* Opciones de navegación */
+nav ul {
+    position: absolute;
+    visibility: hidden;
+    font-family: 'IBM Plex Mono', monospace;
+    list-style: none;
+    font-size: 16px;
+    line-height: 28px;
+    color: white;
+}
+
+nav ul li {
+    padding: 16px;
+    background: #0000EC;
+    width: 0px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:active {
+    color: #00F3BB;
+    text-decoration: line-through;
+}
+
+                             /* Sublíneas */
+nav input[type=checkbox]:checked ~ * .linea-1 {
+    transition: transform 0.2s ease-in-out;
+    transform: rotate(-45deg);
+    position: absolute;
+    margin-top: 8px;  
+}
+
+nav input[type=checkbox]:checked ~ * .linea-2 {
+    transition: opacity 0.1s ease-in-out 0.2s;
+    opacity: 0;
+    position: absolute;
+    margin-top: 8px;
+}
+
+nav input[type=checkbox]:checked ~ * .linea-3 {
+    transition: transform 0.2s ease-in-out;
+    transform: rotate(45deg);
+    margin-top: 8px;
+}
+
+                             /* Expandir texto */
+nav input[type=checkbox]:checked ~ ul{
+    visibility: visible;
+    position: absolute;
+    width: 100%;
+}  
+
+nav input[type=checkbox]:checked ~ * .li-1 {
+    width: 100%;
+    transition: width 0.2s ease-out;
+}
+
+nav input[type=checkbox]:checked ~ * .li-2 {
+    width: 100%;
+    transition: width 0.3s ease-out;
+}
+
+nav input[type=checkbox]:checked ~ * .li-3 {
+    width: 100%;
+    transition: width 0.4s ease-out;
+}
+
+nav input[type=checkbox]:checked ~ * .li-4 {
+    width: 100%;
+    transition: width 0.5s ease-out;
+}
+
+/* ----------------- SECCIÓN: ENCABEZADO ------------------------ */
+header {
+    width: 288px;
+    margin: 0 auto;
+    margin-bottom: 24px;
+    margin-top: 90px;
+}
+
+header h1 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+    color: #060A24;
+    margin-bottom: 16px; 
+}
+
+header p {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    line-height: 22px;
+    color: #060A24;
+    margin-bottom: 36px;
+}
+
+header a {
+    padding: 13px 96px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'IBM Plex Mono';
+    font-weight: 500;
+    background: #00F3BB;
+    width: 288px;
+    height: 48px;
+    border: none;
+    outline: none;
+    color: #060A24;
+}
+
+/* -----------------SECCIÓN: EPISODIOS ------------------------ */
+.diagonal-box {
+    background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+    transform: skewY(-6deg);
+    transform-origin: top right;
+    width: 100%;
+    height: 1203.5px;
+    position: absolute;
+}
+
+main #episodios {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    padding-top: 80px;
+} 
+
+main #episodios h2 {
+    margin-bottom: 24px;
+    margin-left: 16px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+main #episodios .elements {
+    width: 95%;
+    margin: 0 auto;
+}
+
+main #episodios iframe {
+    margin-bottom: 11px;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    height: 232px;
+}
+
+/* ----------------- SECCIÓN: NOSOTROS ------------------------ */
+
+main #nosotros {
+    position: relative;
+    width: 288px;
+    margin: 0 auto;
+    margin-bottom: 54px;
+    display: grid;
+}
+main #nosotros .text {
+    grid-row: 2/3;
+}
+main #nosotros h2 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 36px;
+    color: #060A24;
+    line-height: 42px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+main #nosotros p {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    line-height: 22px;
+    color: #060A24;
+}
+
+/* ----------------- SECCIÓN: ENTREVISTAS ------------------------ */
+
+main #entrevistas {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 48px;
+}
+main #entrevistas h2 {
+    width: 288px;
+    margin: 0 auto;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 36px;
+    color: #060A24;
+    line-height: 42px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+main #entrevistas .imagenes {
+    display: grid;
+}
+
+/* ----------------- SECCIÓN: TÓPICOS ------------------------ */
+
+main #topicos {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 42px;    
+}
+main #topicos h2 {
+    width: 288px;
+    margin: 0 auto;
+    margin-bottom: 37px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 36px;
+    color: #060A24;
+    line-height: 42px;
+    font-weight: 400;
+}
+main #topicos .topics-ctr {
+    display: grid;
+    row-gap: 36px;
+}
+main #topicos .topics-ctr div {
+    width: 100%;
+    display: grid;
+    grid-row-gap: 13px;
+    justify-content: center;
+}
+main #topicos .topics-ctr div img {
+    width: 104px;
+    height: 104px;
+    justify-self: center;
+}
+main #topicos .topics-ctr div p {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #060A24;
+    text-align: center;
+}
+
+/* ----------------- SECCIÓN: NOVEDADES ------------------------ */
+.diagonal-box-1 {
+    transform: skewY(-4deg);
+    height: 341px;
+}
+main #novedades {
+    position: relative;
+    width: 288px;
+    margin: 0 auto;
+    margin-top: 29px;
+    padding-top: 64px;
+    margin-bottom: 67px;
+}
+main #novedades h2 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 42px;
+    margin-bottom: 36px;
+}
+
+main #novedades a {
+    padding: 13px 43px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'IBM Plex Mono';
+    font-weight: 500;
+    background: #00F3BB;
+    border: none;
+    outline: none;
+    color: #060A24;
+}
+
+/* ----------------- SECCIÓN: FOOTER ------------------------ */
+footer {
+    position: relative;
+    background: white;
+    padding: 24px 0;
+}
+footer p {
+    text-align: center;
+    margin-bottom: 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: #060A24;
+    line-height: 22px;
+}
+footer .icons {
+    width: 227px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+footer .icons a {
+    text-decoration: none;
+    color: #060A24;
+}
+
+
+/* ----------------- MEDIA QUERIES ------------------------ */ 
+@media screen and (prefers-reduced-motion: reduce) {
+	html {scroll-behavior: auto;}
+}
+
+/* ----------------- SECCIÓN: GENERAL ------------------------ */
+@media only screen and (min-width: 1441px) {
+    main #episodios {
+        padding-top: 230px;
+    }
+    main #nosotros .text {        
+        width: 70%;
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+    main #nosotros img {
+        width: 60%;
+        margin-left: 13.8vw;
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }  
+    main #nosotros .text h2 {       
+        font-size: 48px;
+        margin-bottom: 24px;
+    }
+    main #nosotros .text p {
+        font-size: 20px;
+        line-height: 40px;
+    }
+    .diagonal-box {
+        height: 1100px;
+    }
+    .diagonal-box-1 {
+        height: 518px;
+    }
+    footer {
+        margin-top: 180px;
+        height: 250px;
+        position: relative;
+    }
+    footer::before {
+        content: "";
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+        border: none;
+        width: 100%;
+        height: 90px;
+        position: absolute;
+    }
+    footer p {
+        margin-top: 100px;
+    }
+    footer .icons {
+        margin-top: 100px;
+    }
+}
+
+/* ----------------- SECCIÓN: MENÚ DE NAVEGACIÓN------------------------ */
+                            /* Tablets */
+@media screen and (max-width: 980px) and (min-width: 550px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    nav .nav-bar {
+        width: auto;
+        margin: 22px 0px;
+        margin-left: 6.8vw;
+        height: auto;
+    }
+    nav .nav-bar label span {
+        display: none;
+    }   
+    nav ul {
+        position: static;
+        visibility: visible;
+        display: flex;
+        align-items: center;
+        margin-right: 6.8vw;
+    }
+    nav ul li {
+        padding: 0px;
+        padding-left: 3.3vw;
+        background: none;
+        width: auto;
+    }
+    nav ul li a{ 
+        color: #060A24;
+    }
+}
+
+                            /* Escritorio */
+@media only screen and (min-width: 981px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    nav .nav-bar {
+        width: auto;
+        margin: 22px 0px;
+        margin-left: 6.8vw;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    nav .nav-bar img {
+        width: 36px;
+        height: 36px;
+    }
+    nav .nav-bar label span {
+        display: none;
+    }  
+    nav ul {
+        position: static;
+        visibility: visible;
+        display: flex;
+        align-items: center;
+        margin-right: 6.8vw;
+    }
+    nav ul li {
+        padding: 0px;
+        padding-left: 3.3vw;
+        background: none;
+        width: auto;
+    }
+    nav ul li a:active {
+        color: #060A24;
+        text-decoration: none;
+    }
+    nav ul li a:hover {
+        color: #00F3BB;
+        text-decoration: line-through;
+    }
+    nav ul li a{ 
+        color: #060A24;
+    }
+}
+
+/* ----------------- SECCIÓN: ENCABEZADO ------------------------ */
+                            /* Tablets */
+@media screen and (max-width: 980px) and (min-width: 550px) {
+    header {
+        width: 100%;
+        padding-left: 13.8vw;
+        margin-bottom: 0px;
+        margin-top: 140px;
+    }
+    header h1 {
+        font-size: 48px;
+    }
+    header p {
+        margin-bottom: 72px;
+        font-size: 16px;
+        width: 70%;
+    }
+    
+    header a {
+        padding: 10px 46px;
+        font-size: 16px;
+    }
+}
+
+                            /* Escritorio */
+@media only screen and (min-width: 981px) {
+    header {
+        width: 100%;
+        padding-left: 13.8vw;
+        margin-bottom: 0px;
+        margin-top: 200px;
+    }
+    header br {
+        display: none;
+    }
+    header h1 {
+        font-size: 64px;
+        margin-bottom: 18px;
+    }
+    header p {       
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 72px;
+        width: 628px;
+    }
+    header a {
+        padding: 16px 56px;        
+        font-size: 18px;
+    }
+    header a:hover {
+        background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+        color: white;
+    }
+}
+
+/* -----------------SECCIÓN: EPISODIOS ------------------------ */
+                            /* Tablets */
+@media screen and (max-width: 980px) and (min-width: 550px) {
+    .diagonal-box {
+        height: 742px;
+    }
+    main #episodios {
+        padding-top: 100px;
+        margin-bottom: 0px;
+        margin-top: 21px;
+    } 
+    main #episodios h2 {
+        margin-bottom: 26px;
+        margin-left: 22px;
+        padding-top: 0px;
+    }       
+    main #episodios .elements {
+        display: grid;        
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        margin: 0 auto;
+    }
+    main #episodios iframe {
+        margin-bottom: 0px;
+    } 
+}
+
+                            /* Escritorio */
+@media only screen and (min-width: 981px) {
+    .diagonal-box {
+        height: 1042.6px;
+    }
+    main #episodios {
+        padding-top: 186px;
+        margin-bottom: 0px;
+        margin-top: 21px;
+    }  
+    main #episodios h2 {
+        margin-bottom: 26px;
+        margin-left: 200px;
+        padding-top: 0px;
+        font-size: 48px;
+    }
+    main #episodios .elements {
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 72px;
+    } 
+    main #episodios iframe {
+        margin-bottom: 0px;
+    } 
+}
+
+/* ----------------- SECCIÓN: NOSOTROS ------------------------ */
+                            /* Tablets */
+@media screen and (max-width: 980px) and (min-width: 550px){
+    main #nosotros {
+        width: 100%;
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 120px;
+        margin-bottom: 0px;
+    } 
+    main #nosotros .text {        
+        width: 90%;
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+    main #nosotros .text h2 {
+        margin-bottom: 24px;
+    }
+    main #nosotros .text h2 br {
+        display: none;
+    }    
+    main #nosotros img {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        width: 70%;
+        margin-left: 10.8vw;
+    }
+}
+
+                            /* Escritorio */
+@media only screen and (min-width: 981px) {
+    main #nosotros {
+        width: 100%;
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 170px;
+        margin-bottom: 0px;
+    } 
+    
+    main #nosotros .text {        
+        width: 464px;
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+    main #nosotros .text h2 {       
+        font-size: 48px;
+        margin-bottom: 24px;
+    }
+    main #nosotros .text h2 br {
+        display: none;
+    }
+    main #nosotros .text p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    main #nosotros img {
+        width: 70%;
+        margin-left: 13.8vw;
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }  
+}
+
+/* ----------------- SECCIÓN: ENTREVISTAS ------------------------ */
+                            /* Tablets */
+@media screen and (max-width: 980px) and (min-width: 550px) {
+    main #entrevistas {
+        margin-bottom: 0px;
+        margin-top: 64px;
+    }
+    main #entrevistas h2 {
+        width: 100%;
+        padding-left: 13.8vw;
+        margin-bottom: 36px;
+    } 
+    main #entrevistas .imagenes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+   
+}
+                            /* Escritorio */
+@media only screen and (min-width: 981px) {
+    main #entrevistas {
+        margin-bottom: 0px;
+        margin-top: 64px;
+    }
+    main #entrevistas h2 {
+        width: 100%;
+        padding-left: 13.8vw;
+        margin-bottom: 36px;
+        font-size: 48px;
+    } 
+    main #entrevistas .imagenes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+}
+
+/* ----------------- SECCIÓN: TÓPICOS ------------------------ */
+                            /* Tablets */
+@media screen and (max-width: 980px) and (min-width: 550px) {
+    main #topicos {
+        margin-top: 64px;
+        margin-bottom: 0px;
+    }
+    main #topicos h2 {
+        width: auto;
+        margin-bottom: 56px;
+        margin-left: 13.8vw;
+    }    
+    main #topicos .topics-ctr {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 0px;
+    }
+    main #topicos .topics-ctr div {        
+        grid-row-gap: 29px;
+    }
+    main #topicos .topics-ctr div p {
+        width: 220px;
+    }     
+}
+
+                            /* Escritorio */
+@media only screen and (min-width: 981px) {
+    main #topicos {
+        margin-top: 64px;
+        margin-bottom: 0px;
+    }
+    main #topicos h2 {
+        width: auto;
+        margin-bottom: 56px;
+        margin-left: 13.8vw;
+        font-size: 48px;    
+    }    
+    main #topicos .topics-ctr {
+        width: 80%;
+        margin: 0 auto;        
+        grid-template-columns: repeat(4, 1fr);
+    }
+    main #topicos .topics-ctr div {
+        grid-row-gap: 29px;
+    }
+    main #topicos .topics-ctr div p {
+        width: 220px;
+    } 
+}
+
+/* ----------------- SECCIÓN: NOVEDADES ------------------------ */
+                            /* Tablets */
+@media screen and (max-width: 980px) and (min-width: 550px) {
+    .diagonal-box-1 {
+        height: 418px;
+        margin-top: 34px;
+    }
+    main #novedades {
+        width: 100%;
+        padding-top: 0px;
+        margin-top: 170px;
+        margin-bottom: 0px;
+        text-align: center;
+    }
+    main #novedades h2 {
+        font-size: 36px;
+        margin-bottom: 52px;
+    }    
+    main #novedades a {
+        padding: 10px 49px;
+        font-size: 16px;
+    } 
+}
+
+                            /* Escritorio */
+@media only screen and (min-width: 981px) {
+    .diagonal-box-1 {
+        height: 518px;
+        margin-top: 34px;
+    }
+    main #novedades {
+        width: 100%;
+        padding-top: 0px;
+        margin-top: 247px;
+        margin-bottom: 0px;
+        text-align: center;        
+    }
+    main #novedades h2 {
+        font-size: 48px;
+        margin-bottom: 52px;
+    }
+    main #novedades a {
+        padding: 16px 59px;
+        font-size: 18px;
+    } 
+    main #novedades a:hover {
+        background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+        color: white;
+    } 
+}
+
+/* ----------------- SECCIÓN: FOOTER ------------------------ */
+
+                            /* Tablets */
+@media screen and (max-width: 980px) and (min-width: 550px) {
+    footer {
+        margin-top: 150px;
+        margin-bottom: 0px;
+        padding: 0px 0px;
+        height: 90px;
+        width: 100%;      
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+    footer p {
+        text-align: left;
+        margin-bottom: 0px;
+        margin-left: 6.9vw;
+    }
+    footer .icons-container {
+        margin-right: 6.9vw;
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+        grid-column-gap: 36px;
+    }
+    
+}
+
+                            /* Escritorio */
+@media only screen and (min-width: 981px) {
+    footer {
+        margin-top: 170px;
+        padding: 0px 0px;
+        height: 120px;
+        width: 100%;      
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+    footer p {
+        text-align: left;
+        margin-bottom: 0px;
+        margin-left: 6.9vw;
+        font-size: 16px;
+        margin-top: 0px;
+    }
+    footer .icons-container {
+        margin-right: 6.9vw;
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+        grid-column-gap: 36px;
+        margin-top: 0px;
+    }
+}
+
+
+
+
+
